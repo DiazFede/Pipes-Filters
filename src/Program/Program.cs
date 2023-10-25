@@ -1,6 +1,7 @@
 ﻿using System;
 using CompAndDel.Pipes;
 using CompAndDel.Filters;
+using Ucu.Poo.Twitter;
 
 namespace CompAndDel
 {
@@ -33,13 +34,11 @@ namespace CompAndDel
             // Continuar con la secuencia (paso 2)
             result = pipe1.Send(result);
 
-            Console.WriteLine("Paso 2 completado");
 
             // Guardar la imagen final
             string outputPathFinal = @"PathToFinalImage.jpg";
             provider.SavePicture(result, outputPathFinal);
-
-            Console.WriteLine("Proceso completado. Imagen final guardada en " + outputPathFinal);
+    
 
         }
     }
