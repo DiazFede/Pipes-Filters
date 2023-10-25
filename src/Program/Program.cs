@@ -38,6 +38,8 @@ namespace CompAndDel
             // Guardar la imagen final
             string outputPathFinal = @"PathToFinalImage.jpg";
             provider.SavePicture(result, outputPathFinal);
+
+            
     
 
         }
