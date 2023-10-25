@@ -8,6 +8,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\PII_CognitiveAPI\src\Library\Library.csproj" />
-    <ProjectReference Include="..\..\..\PII_TwitterApi\src\Library\Library.csproj" />
+    <ProjectReference Include="..\..\..\Twitter-App\src\Library\Library.csproj" />
   </ItemGroup>
 </Project>
