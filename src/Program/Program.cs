@@ -1,7 +1,7 @@
 ﻿using System;
 using CompAndDel.Pipes;
 using CompAndDel.Filters;
-using Ucu.Poo.Twitter;
+using Ucu.Poo.Cognitive;
 
 namespace CompAndDel
 {
@@ -38,8 +38,19 @@ namespace CompAndDel
             // Guardar la imagen final
             string outputPathFinal = @"PathToFinalImage.jpg";
             provider.SavePicture(result, outputPathFinal);
-
             
+            IPicture picture1 = provider.GetPicture(@"ruta_de_la_imagen.jpg");
+
+            IFilter Filter3 = new FilterBlurConvolution();
+            IFilter Filter4 = new FilterGreyscale();
+
+            var conditionalPipe = new ConditionalBranchPipe(faceDetectionFilter, filterIfFaceDetected, filterIfNoFaceDetected);
+
+            var resultPicture = conditionalPipe.Send(picture);
+
+            provider.SavePicture(resultPicture, @"ruta_de_la_imagen_resultado.jpg");
+
+        
     
 
         }
